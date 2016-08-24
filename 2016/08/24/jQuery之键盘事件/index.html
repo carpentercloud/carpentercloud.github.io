@@ -11,7 +11,7 @@
     
     
     
-    	<meta name="description" content="之所以写这个blog是应为在项目中遇到了submit回车提交表单的问题，想要阻止这个事件于是就搜索了一下回车事件。问题解决了，就想记录下自己的路程，用自己的语言描述下自己的理解。虽然我的想法被拒绝了，还是在摸索中学到了知识(ps:原著博客地址：http://www.jb51.net/article/26183.htm).一、键盘事件首先来说下键盘事件，键盘事件分为三个事件，即按下(keydown)、释放(keyup)、敲击(keypress)123keydown():事件会在键盘按下时触发keyup():事件会在键盘释放时触发keypress():事件会在敲击键盘时触发而我们常用的是keypress事件。二、获得键盘上对应的ascII码123$(document).keypress(function(event)&amp;#123;alert(event.keyCode);&amp;#125;);三、常用键盘上对应的ascII码12345keycode13=Enterkeycode37=Leftkeycode38=Upkeycode39=Rightkeycode40=Down四、我的实例在项目中，我遇到的是表单提交之后会弹出一个成功提示，表单和提示都用的modal，而表单的submit有enter提交事件，当成功提示弹出的时候，提示modal的确定按钮没有enter事件，用户如果按enter就会不断重复提交表单数据，造成表单的重复提交。我的解决方案有两个（在项目中我们使用的是coffeeScript语法）：1.在表单提交的事件当中绑定一个enter事件，returnfalse。12345submitChange:(e)=&amp;gt;e.preventDefault()$(e.currentTarget).on&amp;quot;keypress&amp;quot;,(e)-&amp;gt;ife.keyCodeis13thenreturnfalse$.ajax提交数据这样的结果是表单的默认回车提交依然有效，在这个事件弹出的成功modal里的回车事件就会失效。bingoal！2.在全局取消回车事件，returnfalse。1$(document).on&amp;quot;keypress&amp;quot;,(e)-&amp;gt;ife.keyCodeis13thenreturnfalse这样的结果是这个组件的enter事件不会有任何的反应。">
+    	<meta name="description" content="之所以写这个blog是应为在项目中遇到了submit回车提交表单的问题，想要阻止这个事件于是就搜索了一下回车事件。问题解决了，就想记录下自己的路程，用自己的语言描述下自己的理解。虽然我的想法被拒绝了，还是在摸索中学到了知识(ps:原著博客地址：http://www.jb51.net/article/26183.htm).">
     
 	<title>jQuery之键盘事件 - carpentercloud&#39;s blog</title>
 	<link rel="stylesheet" href="/static/css/style.css">
@@ -142,7 +142,7 @@
 					
 				</p>
 				<div class="content">
-					<p>之所以写这个blog是应为在项目中遇到了<strong>submit</strong>回车提交表单的问题，想要阻止这个事件于是就搜索了一下回车事件。问题解决了，就想记录下自己的路程，用自己的语言描述下自己的理解。虽然我的想法被拒绝了，还是在摸索中学到了知识(ps: 原著博客地址：<a href="http://www.jb51.net/article/26183.htm" target="_blank" rel="external">http://www.jb51.net/article/26183.htm</a>).</p>
+					<p>之所以写这个blog是应为在项目中遇到了<strong>submit</strong>回车提交表单的问题，想要阻止这个事件于是就搜索了一下回车事件。问题解决了，就想记录下自己的路程，用自己的语言描述下自己的理解。虽然我的想法被拒绝了，还是在摸索中学到了知识(ps: 原著博客地址：<a href="http://www.jb51.net/article/26183.htm" target="_blank" rel="external">http://www.jb51.net/article/26183.htm</a>).<a id="more"></a></p>
 <h2 id="一、键盘事件"><a href="#一、键盘事件" class="headerlink" title="一、键盘事件"></a>一、键盘事件</h2><p>首先来说下键盘事件，键盘事件分为三个事件，即按下(keydown)、释放(keyup)、敲击(keypress)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">keydown(): 事件会在键盘按下时触发</div><div class="line">keyup(): 事件会在键盘释放时触发</div><div class="line">keypress(): 事件会在敲击键盘时触发</div></pre></td></tr></table></figure></p>
 <p>而我们常用的是keypress事件。</p>
 <hr>
@@ -158,7 +158,7 @@
                 <p> -- <acronym title="End of File">EOF</acronym> -- </p>
                 <div class="post-info">
                     <p>本文链接：<a href="http://yoursite.com/2016/08/24/jQuery之键盘事件/">http://yoursite.com/2016/08/24/jQuery之键盘事件/</a></p>
-                    <p>发表于<i>2016-08-24 10:43:42</i>，并被添加「」标签，最后修改于<i>2016-08-24 14:13:01</i></p>
+                    <p>发表于<i>2016-08-24 10:43:42</i>，并被添加「」标签，最后修改于<i>2016-08-24 16:34:53</i></p>
                 </div>
 			</article>
             
