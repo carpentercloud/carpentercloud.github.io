@@ -151,33 +151,24 @@
                 </div>
 			</article>
             
-                <div id="comments">
-	<h2>Comments</h2>
-	<div id="disqus_thread">
-	    评论加载中...<br><br>注：如果长时间无法加载，请针对 disq.us | disquscdn.com | disqus.com 启用代理。
-	</div>
+                <div class="ds-thread" data-thread-key="2016/08/17/hello-world/"
+     data-title="Hello World" data-url="http://yoursite.com/2016/08/17/hello-world/">
 </div>
+
             
         </div>
     </div>
 </div>
 
-    <script>
-         var disqus_config = function () {
-             this.page.url = 'http://yoursite.com/2016/08/17/hello-world/';
-             this.page.identifier = '2016/08/17/hello-world/';
-         };
+    <script type="text/javascript">
+        var duoshuoQuery = {short_name:'carpenterCloud'};
         (function() {
-
-            var d = document, s = d.createElement('script');
-            var disqus_shortname = 'carpenterCloud';
-            s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-
-            s.setAttribute('data-timestamp', +new Date());
-
-            setTimeout(function(){
-                (d.head || d.body).appendChild(s);
-            },100);
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
         })();
     </script>
 
