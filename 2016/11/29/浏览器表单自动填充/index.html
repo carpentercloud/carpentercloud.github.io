@@ -143,7 +143,8 @@
                     
 				</p>
 				<div class="content">
-					<p>没想到再次打开blog已经是11月份的尾巴了，说来惭愧，最近发生的事情太多了，整个人的都蒙圈了。先是工作上的忙碌，还有生活的一些事情，总之在打开写已经两个月过去了.<a id="more"></a>今天偶得闲暇，有碰到了一个很久以前就遇到过的小问题，通过查找资料，自测试，最终在知乎上找到了解决方法。先抛出我的问题，浏览器的保存密码大家都不陌生吧，但是你应该也碰到过在你注册某个网站时会看到不想要自动填充的地方，填充了你的账号和密码，例如下面的栗子：<br><img src="/static/images/autocomplete1.png" alt="dd"><br>遇到上面的问题，刚开始挺让人头大的，找了些解决方案。</p>
+					<p>没想到再次打开blog已经是11月份的尾巴了，说来惭愧，最近发生的事情太多了，整个人的都蒙圈了。先是工作上的忙碌，还有生活的一些事情，总之在打开写已经两个月过去了.<a id="more"></a>今天偶得闲暇，有碰到了一个很久以前就遇到过的小问题，通过查找资料，自测试，最终在知乎上找到了解决方法。先抛出我的问题，浏览器的保存密码大家都不陌生吧，但是你应该也碰到过在你注册某个网站时会看到不想要自动填充的地方，填充了你的账号和密码，例如下面的栗子：</p>
+<p><center style="width:300px;margin:0 auto;"><img src="/static/images/autocomplete1.png" alt="dd"></center><br>遇到上面的问题，刚开始挺让人头大的，找了些解决方案。</p>
 <hr>
 <p>先说一下浏览器这个自动填充的原理吧。浏览器保存的用户名会和密码会找到页面结构中的type值为password的input标签，然后把值进行填充。提到表单的自动填充大家很容易想到autocomplete这个属性，但是这个属性的兼容性问题太严重，方案给予排除在外。</p>
 <h3 id="方案一：增加隐藏域"><a href="#方案一：增加隐藏域" class="headerlink" title="方案一：增加隐藏域"></a>方案一：增加隐藏域</h3><p>增加隐藏域即是增加type为password的input标签，样式设为display:none<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;password&quot; style=&quot;display:none&quot; /&gt;</div></pre></td></tr></table></figure></p>
@@ -161,7 +162,7 @@
                         
                             ，
                             <a  href="/tags/html" data-tag="html">html</a>
-                        」标签，最后修改于<i>2016-11-29 22:21:44</i></p>
+                        」标签，最后修改于<i>2016-11-29 22:24:53</i></p>
                 </div>
 			</article>
             
