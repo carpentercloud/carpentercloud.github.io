@@ -10,12 +10,12 @@
     
     
     
-    	<meta name="keyword" content="杂记">
+    	<meta name="keyword" content="react">
     
     
-    	<meta name="description" content="趁着清晨思路清晰来一发，这篇文章主要记录自己在闲暇时学习及在工作时遇到问题，查找资料遇见的好的一些资料、博客、文章等。">
+    	<meta name="description" content="首先还是想先废话的讲几句react是玩意，为啥要搞它">
     
-	<title>学习足迹 - carpentercloud&#39;s blog</title>
+	<title>react实用技巧 - carpentercloud&#39;s blog</title>
 	<link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
@@ -128,42 +128,35 @@
         	<article class="markdown">
 				<h1>
 					
-                        学习足迹
+                        react实用技巧
                     
 				</h1>
 				<p class="note-tags">
 					
-                        <a  href="/tags/杂记" data-tag="杂记">
-                            <code class="notebook">杂记</code>
+                        <a  href="/tags/react" data-tag="react">
+                            <code class="notebook">react</code>
                         </a>
                     
 				</p>
 				<div class="content">
-					<p>趁着清晨思路清晰来一发，这篇文章主要记录自己在闲暇时学习及在工作时遇到问题，查找资料遇见的好的一些资料、博客、文章等。<br><a id="more"></a></p>
+					<p>首先还是想先废话的讲几句react是玩意，为啥要搞它<br><a id="more"></a></p>
 <hr>
-<h3 id="json-在线解析工具"><a href="#json-在线解析工具" class="headerlink" title="json 在线解析工具"></a>json 在线解析工具</h3><p><a href="http://jsoneditoronline.org/" target="_blank" rel="external">jsoneditoronline/</a></p>
-<h3 id="React篇"><a href="#React篇" class="headerlink" title="React篇"></a>React篇</h3><hr>
-<h3 id="Redux"><a href="#Redux" class="headerlink" title="Redux"></a>Redux</h3><p><a href="http://cn.redux.js.org/docs/introduction/index.html" target="_blank" rel="external">Redux中文文档</a></p>
-<hr>
-<h3 id="vue篇"><a href="#vue篇" class="headerlink" title="vue篇"></a>vue篇</h3><p><a href="http://cn.vuejs.org/v2/guide/" target="_blank" rel="external">vue文档</a></p>
-<hr>
-<h3 id="前端资源教程-没事就去瞅两眼"><a href="#前端资源教程-没事就去瞅两眼" class="headerlink" title="前端资源教程(没事就去瞅两眼)"></a>前端资源教程(没事就去瞅两眼)</h3><p><a href="https://cnodejs.org/topic/56ef3edd532839c33a99d00e" target="_blank" rel="external">前端资源教程</a></p>
-<h3 id="报错处理"><a href="#报错处理" class="headerlink" title="报错处理"></a>报错处理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(document).on &apos;click&apos;, &apos;.click-class&apos;, @clickEvent #委托事件</div></pre></td></tr></table></figure>
-<p>Uncaught TypeError: ((jQuery.event.special[handleObj.origType] || (intermediate value)).handle || handleObj.handler).apply is not a function<br>我的理解：未找到要委托的函数</p>
+<h4 id="1-dangerouslySetInnerHTML-转义html标签"><a href="#1-dangerouslySetInnerHTML-转义html标签" class="headerlink" title="1.dangerouslySetInnerHTML 转义html标签"></a>1.dangerouslySetInnerHTML 转义html标签</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;div dangerouslySetInnerHTML=&#123;&#123;__html: productDetail.product.description&#125;&#125;/&gt;</div><div class="line">&lt;div dangerouslySetInnerHTML=&#123;&#123;__html: &quot;&lt;h1&gt;这是 &amp;middot; 测试&lt;/h1&gt;&quot;&#125;&#125;/&gt;</div></pre></td></tr></table></figure>
+<h4 id="2-获取url内的参数"><a href="#2-获取url内的参数" class="headerlink" title="2.获取url内的参数"></a>2.获取url内的参数</h4><p><code>this.props.location.querry.name</code><br>其实这个可以打印下props看一下，因为有段时间不写了，一时间没有想起来。</p>
 
 				</div>
                 <p> -- <acronym title="End of File">EOF</acronym> -- </p>
                 <div class="post-info">
-                    <p>本文链接：<a href="http://yoursite.com/2017/03/29/学习足迹/">http://yoursite.com/2017/03/29/学习足迹/</a></p>
-                    <p>发表于<i>2017-03-29 08:28:30</i>，并被添加「
+                    <p>本文链接：<a href="http://yoursite.com/2017/03/31/react实用技巧/">http://yoursite.com/2017/03/31/react实用技巧/</a></p>
+                    <p>发表于<i>2017-03-31 21:05:55</i>，并被添加「
                             
-                            <a  href="/tags/杂记" data-tag="杂记">杂记</a>
-                        」标签，最后修改于<i>2017-03-29 10:21:31</i></p>
+                            <a  href="/tags/react" data-tag="react">react</a>
+                        」标签，最后修改于<i>2017-03-31 21:29:43</i></p>
                 </div>
 			</article>
             
-                <div class="ds-thread" data-thread-key="2017/03/29/学习足迹/"
-     data-title="学习足迹" data-url="http://yoursite.com/2017/03/29/学习足迹/">
+                <div class="ds-thread" data-thread-key="2017/03/31/react实用技巧/"
+     data-title="react实用技巧" data-url="http://yoursite.com/2017/03/31/react实用技巧/">
 </div>
 
             
