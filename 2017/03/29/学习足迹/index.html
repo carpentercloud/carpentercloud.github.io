@@ -141,6 +141,42 @@
 				<div class="content">
 					<p>趁着清晨思路清晰来一发，这篇文章主要记录自己在闲暇时学习及在工作时遇到问题，查找资料遇见的好的一些资料、博客、文章等。<br><a id="more"></a></p>
 <hr>
+<h3 id="报错处理"><a href="#报错处理" class="headerlink" title="报错处理"></a>报错处理</h3><blockquote>
+<p>$(document).on ‘click’, ‘.click-class’, @clickEvent #委托事件</p>
+</blockquote>
+<p>Uncaught TypeError: ((jQuery.event.special[handleObj.origType] || (intermediate value)).handle || handleObj.handler).apply is not a function<br>我的理解：未找到要委托的函数</p>
+<hr>
+<h3 id="JavaScript-开发者经常忽略或误用的七个基础知识点"><a href="#JavaScript-开发者经常忽略或误用的七个基础知识点" class="headerlink" title="JavaScript 开发者经常忽略或误用的七个基础知识点"></a><a href="http://blog.csdn.net/qq_37810594/article/details/61193631" target="_blank" rel="external">JavaScript 开发者经常忽略或误用的七个基础知识点</a></h3><pre><code>1. 在 String.prototype.replace 方法中使用 /g 和 /i 标志位
+</code></pre><blockquote>
+<p> var str = “David is an Arsenal fan, which means David is great”;<br>    str.replace(“David”, “Darren”); // “Darren is an Arsenal fan, which means David is great”<br>    str.replace(/David/g, “Darren”); // “Darren is an Arsenal fan, which means Darren is great”</p>
+</blockquote>
+<pre><code>2. 类数组对象和 Array.prototype.slice 方法
+</code></pre><blockquote>
+<p>var nodesArr = Array.prototype.slice.call(document.querySelectorAll(“div”));<br>    // “true” array of DIVs<br>    // 得到一个由 div 元素组成的“真正的”数组<br>    var argsArr = Array.prototype.slice.call(arguments);<br>    // changes arguments to “true” array<br>    // 把 arguments 转换成一个“真正的”数组<br>    你还可以使用一次简单的 slice 调用来克隆一个数组：<br>    var clone = myArray.slice(0); // naive clone </p>
+</blockquote>
+<pre><code>3.Array.prototype.sort 方法
+</code></pre><blockquote>
+<p>[1, 3, 9, 2].sort();// 返回 [1, 2, 3, 9]<br>    [<br>        { name: “Robin Van PurseStrings”, age: 30 },<br>        { name: “Theo Walcott”, age: 24 },<br>        { name: “Bacary Sagna”, age: 28  }<br>    ].sort(function(obj1, obj2) {<br>        // Ascending: first age less than the previous<br>        // 实现增序排列：前者的 age 小于后者<br>        return obj1.age - obj2.age;<br>    });<br>        // Returns:<br>        // [<br>        //    { name: “Theo Walcott”, age: 24 },<br>        //    { name: “Bacary Sagna”, age: 28  },<br>        //    { name: “Robin Van PurseStrings”, age: 30 }<br>    // ]  </p>
+</blockquote>
+<pre><code>4.用 length 属性来截断数组
+</code></pre><blockquote>
+<p>var myArray = yourArray = [1, 2, 3];<br>    myArray = []; // <code>yourArray</code> is still [1, 2, 3]<br>    myArray.length = 0; // <code>yourArray</code> and <code>myArray</code> both [ ] </p>
+</blockquote>
+<pre><code>5.使用 push 来合并数组
+</code></pre><blockquote>
+<p>var mergeTo = [4,5,6];<br>    var mergeFrom = [7,8,9];<br>    Array.prototype.push.apply(mergeTo, mergeFrom);<br>    mergeTo; // is: [4, 5, 6, 7, 8, 9] </p>
+</blockquote>
+<pre><code>6.高效探测功能特性和对象属性
+</code></pre><blockquote>
+<p>if(navigator.geolocation) {<br>        // Do some stuff<br>        // 在这里干点事情<br>    }</p>
+</blockquote>
+<p>  当然这可以正常工作，但它并不一定有很好的效率。因为这个对象探测方法会在浏览器中初始化资源。在过去，上面的代码片断可能会在某些浏览器下导致内存泄露。更好、更快的方法是检查对象是否包含某个键名：</p>
+<blockquote>
+<p>if(“geolocation” in navigator) {<br>        // Do some stuff<br>        // 在这里干点事情<br>    }</p>
+</blockquote>
+<p>  键名检查十分简单，而且可以避免内存泄露。另外请注意，如果这个属性的值是假值，那么前一种探测方式将会得到“否”的结果，并不能真正探测出这个键名是否存在。</p>
+<pre><code>7.事件对象的 preventDefault 和 stopPropagation 方法
+</code></pre><hr>
 <h3 id="json-在线解析工具"><a href="#json-在线解析工具" class="headerlink" title="json 在线解析工具"></a>json 在线解析工具</h3><p><a href="http://jsoneditoronline.org/" target="_blank" rel="external">jsoneditoronline/</a></p>
 <h3 id="React篇"><a href="#React篇" class="headerlink" title="React篇"></a>React篇</h3><hr>
 <h3 id="Redux"><a href="#Redux" class="headerlink" title="Redux"></a>Redux</h3><p><a href="http://cn.redux.js.org/docs/introduction/index.html" target="_blank" rel="external">Redux中文文档</a></p>
@@ -148,8 +184,6 @@
 <h3 id="vue篇"><a href="#vue篇" class="headerlink" title="vue篇"></a>vue篇</h3><p><a href="http://cn.vuejs.org/v2/guide/" target="_blank" rel="external">vue文档</a></p>
 <hr>
 <h3 id="前端资源教程-没事就去瞅两眼"><a href="#前端资源教程-没事就去瞅两眼" class="headerlink" title="前端资源教程(没事就去瞅两眼)"></a>前端资源教程(没事就去瞅两眼)</h3><p><a href="https://cnodejs.org/topic/56ef3edd532839c33a99d00e" target="_blank" rel="external">前端资源教程</a></p>
-<h3 id="报错处理"><a href="#报错处理" class="headerlink" title="报错处理"></a>报错处理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(document).on &apos;click&apos;, &apos;.click-class&apos;, @clickEvent #委托事件</div></pre></td></tr></table></figure>
-<p>Uncaught TypeError: ((jQuery.event.special[handleObj.origType] || (intermediate value)).handle || handleObj.handler).apply is not a function<br>我的理解：未找到要委托的函数</p>
 
 				</div>
                 <p> -- <acronym title="End of File">EOF</acronym> -- </p>
@@ -158,7 +192,7 @@
                     <p>发表于<i>2017-03-29 08:28:30</i>，并被添加「
                             
                             <a  href="/tags/杂记" data-tag="杂记">杂记</a>
-                        」标签，最后修改于<i>2017-03-29 10:21:31</i></p>
+                        」标签，最后修改于<i>2017-04-11 10:07:43</i></p>
                 </div>
 			</article>
             
