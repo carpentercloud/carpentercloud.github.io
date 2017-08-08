@@ -124,6 +124,16 @@ git branch -D branch-name #强制删除，不会提示错误信息
 ```
 git merge branch-name #先切换到主分支再合并
 ```
+* 暂存本地修改和恢复本地修改
+```
+git stash          # save uncommitted changes
+# pull, edit, etc.
+git stash list     # list stashed changes in this git
+git show stash@{0} # see the last stash 
+git stash pop      # apply last stash and remove it from the list
+
+git stash --help   # for more info
+```
 ***
 以上基础命令参考博客地址：[Chillax's blog--Git常用的基础命令](http://opiece.me/2015/04/06/git-basic-commands/).
 如果想进一步理解git可以查看：[常用 Git 命令清单](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
