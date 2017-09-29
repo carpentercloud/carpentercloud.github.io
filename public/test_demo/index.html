@@ -1,0 +1,33 @@
+<html>
+        <head>
+            <meta charset="utf-8">
+            <title>test</title>
+            <script src="http://code.jquery.com/jquery-latest.js"></script>
+        </head>
+        <body>
+            <div>下面是嵌套的iframe</div>
+            <input type="file" name="file" onchange="getUrl()">
+            <button class="postM" onClick="postM()">点击我向子页面发送信息</button>
+            <iframe src="iframe.html" name="testIframe" frameborder="0"></iframe>
+            <script>
+                function getUrl(){
+                    var self = this;
+                    console.log($("input[name='file']"));
+                }
+                function parentFn () {
+                    console.log("我是父页面的方法");;
+                }
+                window.addEventListener("message", function (e) {
+                    console.log(e.data);
+                });
+                function postM(){
+                    postMessage("dd","*");
+                }
+                // $(function(){
+                //     $("input[name='file']").(function(){
+                //         console.log($(this));
+                //     });
+                // });
+            </script>
+        </body>
+    </html>

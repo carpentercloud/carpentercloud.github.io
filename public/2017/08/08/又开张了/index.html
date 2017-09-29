@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="null">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="author" content="carpentercloud">
+	
+        <link rel="icon" href="/static/images/favicon.png">
+    
+    
+    
+    	<meta name="keyword" content="随笔">
+    
+    
+    	<meta name="description" content="由于换工作，之前写配置hexo的mac电脑也上交给公司了。经过折腾，终于能重新开张了。">
+    
+	<title>又开张了 - carpentercloud&#39;s blog</title>
+	<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+
+
+<nav  id="sidebar" class=" behavior_1">
+    <div class="wrap">
+    	
+    		<div class="profile">
+    			<a href="/"><img src="/static/images/gravatar.jpg" alt="carpenterCloud"></a>
+    			<span>carpenterCloud</span>
+    		</div>
+    	
+    	
+    		<ul class="buttons">
+    			
+    				<li>
+                        <a  class="" href="/">
+                            
+                                <i class="iconfont icon-home" title="首页"></i>
+                            
+                            <span>首页</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/archive/">
+                            
+                                <i class="iconfont icon-archive" title="归档"></i>
+                            
+                            <span>归档</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/tags/">
+                            
+                                <i class="iconfont icon-tags" title="标签"></i>
+                            
+                            <span>标签</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/about/">
+                            
+                                <i class="iconfont icon-user" title="关于"></i>
+                            
+                            <span>关于</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/links/">
+                            
+                                <i class="iconfont icon-link" title="友链"></i>
+                            
+                            <span>友链</span>
+                        </a>
+                    </li>
+    			
+    		</ul>
+    	
+    		<ul class="buttons">
+    			
+    				<li>
+                        <a  target="_blank"  class="" href="https://github.com/carpentercloud">
+                            
+                                <i class="iconfont icon-github" title="GitHub"></i>
+                            
+                            <span>GitHub</span>
+                        </a>
+                    </li>
+    			
+    		</ul>
+    	
+    		<ul class="buttons">
+    			
+    				<li>
+                        <a  class="" href="/atom.xml">
+                            
+                                <i class="iconfont icon-rss" title="RSS"></i>
+                            
+                            <span>RSS</span>
+                        </a>
+                    </li>
+    			
+    		</ul>
+    	
+    </div>
+</nav>
+
+
+
+<div id="header">
+	<div class="btn-bar"><i></i></div>
+	<h1><a href="/">carpentercloud&#39;s blog</a></h1>
+	<a class="me" href="/about/">
+        <img src="/static/images/gravatar.jpg" alt="carpenterCloud" alt="carpenterCloud">
+    </a>
+</div>
+<div id="sidebar-mask"></div>
+
+
+
+<div id="main">
+    <div class="wrap">
+        <div id="page-post">
+        	<article class="markdown">
+				<h1>
+					
+                        又开张了
+                    
+				</h1>
+				<p class="note-tags">
+					
+                        <a  href="/tags/随笔" data-tag="随笔">
+                            <code class="notebook">随笔</code>
+                        </a>
+                    
+				</p>
+				<div class="content">
+					<p>由于换工作，之前写配置hexo的mac电脑也上交给公司了。经过折腾，终于能重新开张了。<br><a id="more"></a><br>先来说说hexo如何多台电脑一起写博客吧。以前知识储备不足，也忽略了这个。所以现在记录下自己的一些心得体会。本来一头雾水的我，现在回想起来原来是这么简单的一件事。</p>
+<hr>
+<h2 id="知其然，而不知其所以然"><a href="#知其然，而不知其所以然" class="headerlink" title="知其然，而不知其所以然"></a>知其然，而不知其所以然</h2><p>回想当时配置hexo的时候其实我们在github里做了两个分支的。一个<code>master</code>,一个<code>gh-pages</code>分支。另外我们在hexo 的 congfig里也有以下配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: https://github.com/username/url.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<p>当时没有太注意这些配置，现在想来恍然大悟，原来<code>hexo d</code>执行的命令是和这里有关联的。所以现在<code>master</code>分支是展示自己blog的public文件。<br>而<code>ph-pages</code>这个分支我们刚好可以提交我们的源代码、hexo的一些配置。这样当我们换电脑时，只需要添加此处的远程仓库，<code>git pull</code>这些代码就可以在不同的设备上来愉快的写自己的blog，以后再也不会担心因为换电脑而没有源代码头疼了。</p>
+<hr>
+<h2 id="一些git的坑"><a href="#一些git的坑" class="headerlink" title="一些git的坑"></a>一些git的坑</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">refusing to merge unrelated histories # 没有共同祖先的分支合并</div><div class="line">git checkout .  # 丢弃本地所有的更改</div><div class="line">git remote -v # 查看远程库配置</div></pre></td></tr></table></figure>
+<hr>
+<p>另外再补记下一个小坑。我当时把hexo的本地文件找以前的同事打包发给我的。但是在有的电脑打开，中文文件名会出现编码问题，本来还以为的编辑器的原因，尝试各种编码格式无果，最后发现原来的压缩解压的问题，果断尝试了下2345解压工具，一下子就解决了，其他解压工具没有试。此处给2345点个赞！</p>
+
+				</div>
+                <p> -- <acronym title="End of File">EOF</acronym> -- </p>
+                <div class="post-info">
+                    <p>本文链接：<a href="http://yoursite.com/2017/08/08/又开张了/">http://yoursite.com/2017/08/08/又开张了/</a></p>
+                    <p>发表于<i>2017-08-08 00:00:00</i>，并被添加「
+                            
+                            <a  href="/tags/随笔" data-tag="随笔">随笔</a>
+                        」标签，最后修改于<i>2017-08-08 17:06:28</i></p>
+                </div>
+			</article>
+            
+                <div class="ds-thread" data-thread-key="2017/08/08/又开张了/"
+     data-title="又开张了" data-url="http://yoursite.com/2017/08/08/又开张了/">
+</div>
+
+            
+        </div>
+    </div>
+</div>
+
+    <script type="text/javascript">
+        var duoshuoQuery = {short_name:'carpenterCloud'};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+
+
+<script src="/static/js/meizi.js"></script>
+</body>
+</html>
