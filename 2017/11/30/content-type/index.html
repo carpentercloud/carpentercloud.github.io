@@ -10,12 +10,12 @@
     
     
     
-    	<meta name="keyword" content="hexo">
+    	<meta name="keyword" content="js,ajax">
     
     
-    	<meta name="description" content="WelcometoHexo!Thisisyourveryfirstpost.Checkdocumentationformoreinfo.IfyougetanyproblemswhenusingHexo,youcanfindtheanswerintroubleshootingoryoucanaskmeonGitHub.QuickStartCreateanewpost1$hexonew&quot;MyNewPost&quot;Moreinfo:WritingRunserver1$hexoserverMoreinfo:ServerGeneratestaticfiles1$hexogenerateMoreinfo:GeneratingDeploytoremotesites1$hexodeployMoreinfo:Deployment">
+    	<meta name="description" content="今天遇到了一个很奇葩的问，就是在苹果5s下的qq浏览器，发送的post请求数据被莫名奇妙的不见了。而换成get就可以了，真是无语了。在qq自带的浏览器和其他浏览器也都正常。">
     
-	<title>Hello World - carpentercloud&#39;s blog</title>
+	<title>content-type - carpentercloud&#39;s blog</title>
 	<link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
@@ -128,40 +128,41 @@
         	<article class="markdown">
 				<h1>
 					
-                        Hello World
+                        content-type
                     
 				</h1>
 				<p class="note-tags">
 					
-                        <a  href="/tags/hexo" data-tag="hexo">
-                            <code class="notebook">hexo</code>
+                        <a  href="/tags/js" data-tag="js">
+                            <code class="notebook">js</code>
+                        </a>
+                    
+                        <a  href="/tags/ajax" data-tag="ajax">
+                            <code class="notebook">ajax</code>
                         </a>
                     
 				</p>
 				<div class="content">
-					<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+					<p>今天遇到了一个很奇葩的问，就是在苹果5s下的qq浏览器，发送的post请求数据被莫名奇妙的不见了。而换成get就可以了，真是无语了。在qq自带的浏览器和其他浏览器也都正常。<br><a id="more"></a></p>
+<h3 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h3><p>application/x-www-form-urlencoded： 窗体数据被编码为名称/值对。这是标准的编码格式。 multipart/form-data： 窗体数据被编码为一条消息，页上的每个控件对应消息中的一个部分。 text/plain： 窗体数据以纯文本形式进行编码，其中不含任何控件或格式字符。</p>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>form的enctype属性为编码方式，常用有两种：application/x-www-form-urlencoded和multipart/form-data，默认为application/x-www-form-urlencoded。 当action为get时候，浏览器用x-www-form-urlencoded的编码方式把form数据转换成一个字串（name1=value1&amp;name2=value2…），然后把这个字串append到url后面，用?分割，加载这个新的url。 当action为post时候，浏览器把form数据封装到http body中，然后发送到server。 如果没有type=file的控件，用默认的application/x-www-form-urlencoded就可以了。 但是如果有type=file的话，就要用到multipart/form-data了。浏览器会把整个表单以控件为单位分割，并为每个部分加上Content-Disposition(form-data或者file),Content-Type(默认为text/plain),name(控件name)等信息，并加上分割符(boundary)。</p>
 
 				</div>
                 <p> -- <acronym title="End of File">EOF</acronym> -- </p>
                 <div class="post-info">
-                    <p>本文链接：<a href="http://yoursite.com/2016/08/07/hello-world/">http://yoursite.com/2016/08/07/hello-world/</a></p>
-                    <p>发表于<i>2016-08-07 13:33:23</i>，并被添加「
+                    <p>本文链接：<a href="http://yoursite.com/2017/11/30/content-type/">http://yoursite.com/2017/11/30/content-type/</a></p>
+                    <p>发表于<i>2017-11-30 00:00:00</i>，并被添加「
                             
-                            <a  href="/tags/hexo" data-tag="hexo">hexo</a>
-                        」标签，最后修改于<i>2017-10-12 16:54:29</i></p>
+                            <a  href="/tags/js" data-tag="js">js</a>
+                        
+                            ，
+                            <a  href="/tags/ajax" data-tag="ajax">ajax</a>
+                        」标签，最后修改于<i>2017-12-06 19:49:43</i></p>
                 </div>
 			</article>
             
-                <div class="ds-thread" data-thread-key="2016/08/07/hello-world/"
-     data-title="Hello World" data-url="http://yoursite.com/2016/08/07/hello-world/">
+                <div class="ds-thread" data-thread-key="2017/11/30/content-type/"
+     data-title="content-type" data-url="http://yoursite.com/2017/11/30/content-type/">
 </div>
 
             
