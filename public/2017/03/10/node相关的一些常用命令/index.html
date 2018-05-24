@@ -13,7 +13,7 @@
     	<meta name="keyword" content="Node,nvm">
     
     
-    	<meta name="description" content="最近遇到node频繁更新，与项目中herd版本有依赖，遇到一些坑，也就用到了一些关于node的一些管理工具nvm，下面就来先说一下nvm吧">
+    	<meta name="description" content="最近遇到node频繁更新，与项目中herd版本有依赖，遇到一些坑，也就用到了一些关于node的一些管理工具nvm(用了window才知道这只是mac下能用的，坑，windows下就别想了)，下面就来先说一下nvm吧">
     
 	<title>node相关的一些常用命令 - carpentercloud&#39;s blog</title>
 	<link rel="stylesheet" href="/static/css/style.css">
@@ -143,9 +143,12 @@
                     
 				</p>
 				<div class="content">
-					<p>最近遇到node频繁更新，与项目中herd版本有依赖，遇到一些坑，也就用到了一些关于node的一些管理工具nvm，下面就来先说一下nvm吧<a id="more"></a></p>
+					<p>最近遇到node频繁更新，与项目中herd版本有依赖，遇到一些坑，也就用到了一些关于node的一些管理工具nvm(用了window才知道这只是mac下能用的，坑，windows下就别想了)，下面就来先说一下nvm吧<a id="more"></a></p>
 <hr>
 <h3 id="一、node相关的一些命令"><a href="#一、node相关的一些命令" class="headerlink" title="一、node相关的一些命令"></a>一、node相关的一些命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">使用默认的node版本：nvm alias default 7.5.0</div><div class="line">临时使用node版本： nvm use 7.5</div><div class="line">安装node最新版本号： nvm install node</div><div class="line">安装node指定版本： nvm install 7.5.0</div><div class="line">安装herd 指定版本： npm i @terminus.herd@0.4.4</div></pre></td></tr></table></figure>
+<h3 id="二、-node升级"><a href="#二、-node升级" class="headerlink" title="二、 node升级"></a>二、 node升级</h3><h2 id="全局安装cnpm"><a href="#全局安装cnpm" class="headerlink" title="全局安装cnpm"></a>全局安装cnpm</h2><p><code>npm install -g cnpm --registry.npm.taobao.org</code><br>先是装cnpm 淘宝镜像不成功<br>node 6.10.3<br>npm 3.10<br>然后才想着升级node<br>正如大多数说的那样，首先安装n<br>npm install -g n<br>升级node.js到最新稳定版<br>n stable<br>但是没卵用，这是在mac下的。<br>好不容易已找到了win10下的 npm install -g –force<br>可是到了下一步又， 报无效的版本。<br>也是够了，索性去官网重新下载安装包，简单省事。</p>
+<p><code>1.npm putdated 列出已过时的抱</code><br><code>2.npm update 更新模块</code><br><code>2.npm list node-sass 列出安装模块的信息</code></p>
+<h2 id="windows-下-ERROR-in-Node-Sass-does-not-yet-support-your-current-environmen"><a href="#windows-下-ERROR-in-Node-Sass-does-not-yet-support-your-current-environmen" class="headerlink" title="windows 下 ERROR in Node Sass does not yet support  your current environmen"></a>windows 下 ERROR in Node Sass does not yet support  your current environmen</h2><p>Module build failed: Error: Node Sass does not yet support your current environment: Windows 64-bit with Unsupported runtime (57)<br>(G:\work\sdwActivity\node_modules_node-sass@3.13.1@node-sass\lib\binding.js:13:13)<br>明明已经安装了最新的node-sass，并且官网也查了，4.7.2版本的node-sass支持 windows 64-bit node8 ，却发现报的还是node-sass3.13.1 ，坑，竟然安装了两个node-sass，默认使用了3.13版<br>npm node-sass 安装最新版本sass无效，查看安装的node-sass版本号，先删除node-moudle文件，再node</p>
 
 				</div>
                 <p> -- <acronym title="End of File">EOF</acronym> -- </p>
@@ -157,7 +160,7 @@
                         
                             ，
                             <a  href="/tags/nvm" data-tag="nvm">nvm</a>
-                        」标签，最后修改于<i>2017-03-10 22:58:10</i></p>
+                        」标签，最后修改于<i>2017-12-26 10:28:30</i></p>
                 </div>
 			</article>
             
@@ -166,11 +169,41 @@
 </div>
 
             
+            <div id="SOHUCS" sid="请将此处替换为配置SourceID的语句" ></div> 
+            <script type="text/javascript"> 
+                (function(){ 
+                var appid = 'cytmEO2uE'; 
+                var conf = 'prod_286bd219be6a5f4a49feb31ad2c67b1a'; 
+                var width = window.innerWidth || document.documentElement.clientWidth; 
+                if (width < 960) { 
+                window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + 
+                appid + '&conf=' + conf + '"><\/script>'); } else { 
+                    var loadJs=function(d,a){
+                    var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;
+                    var b=document.createElement("script");b.setAttribute("type","text/javascript");
+                    b.setAttribute("charset","UTF-8");b.setAttribute("src",d);
+                    if(typeof a==="function"){
+                        if(window.attachEvent){
+                            b.onreadystatechange=function(){
+                                var e=b.readyState;
+                                if(e==="loaded"||e==="complete"){
+                                    b.onreadystatechange=null;
+                                    a()
+                                    }
+                                 }
+                            }
+                    else{b.onload=a}}c.appendChild(b)
+                    };
+                loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+                    window.changyan.api.config({appid:appid,conf:conf})}); 
+                } 
+                })(); 
+            </script>
         </div>
     </div>
 </div>
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         var duoshuoQuery = {short_name:'carpenterCloud'};
         (function() {
             var ds = document.createElement('script');
@@ -180,7 +213,8 @@
             (document.getElementsByTagName('head')[0]
             || document.getElementsByTagName('body')[0]).appendChild(ds);
         })();
-    </script>
+    </script> -->
+    
 
 
 <script src="/static/js/meizi.js"></script>

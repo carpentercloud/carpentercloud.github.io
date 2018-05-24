@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="null">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="author" content="carpentercloud">
+	
+        <link rel="icon" href="/static/images/favicon.png">
+    
+    
+    
+    	<meta name="keyword" content="jq">
+    
+    
+    	<meta name="description" content="append()-在被选元素的结尾插入内容prepend()-在被选元素的开头插入内容after()-在被选元素之后插入内容before()-在被选元素之前插入内容">
+    
+	<title>jq常用dom操作 - carpentercloud&#39;s blog</title>
+	<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+
+
+<nav  id="sidebar" class=" behavior_1">
+    <div class="wrap">
+    	
+    		<div class="profile">
+    			<a href="/"><img src="/static/images/gravatar.jpg" alt="carpenterCloud"></a>
+    			<span>carpenterCloud</span>
+    		</div>
+    	
+    	
+    		<ul class="buttons">
+    			
+    				<li>
+                        <a  class="" href="/">
+                            
+                                <i class="iconfont icon-home" title="首页"></i>
+                            
+                            <span>首页</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/archive/">
+                            
+                                <i class="iconfont icon-archive" title="归档"></i>
+                            
+                            <span>归档</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/tags/">
+                            
+                                <i class="iconfont icon-tags" title="标签"></i>
+                            
+                            <span>标签</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/about/">
+                            
+                                <i class="iconfont icon-user" title="关于"></i>
+                            
+                            <span>关于</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/links/">
+                            
+                                <i class="iconfont icon-link" title="友链"></i>
+                            
+                            <span>友链</span>
+                        </a>
+                    </li>
+    			
+    		</ul>
+    	
+    		<ul class="buttons">
+    			
+    				<li>
+                        <a  target="_blank"  class="" href="https://github.com/carpentercloud">
+                            
+                                <i class="iconfont icon-github" title="GitHub"></i>
+                            
+                            <span>GitHub</span>
+                        </a>
+                    </li>
+    			
+    		</ul>
+    	
+    		<ul class="buttons">
+    			
+    				<li>
+                        <a  class="" href="/atom.xml">
+                            
+                                <i class="iconfont icon-rss" title="RSS"></i>
+                            
+                            <span>RSS</span>
+                        </a>
+                    </li>
+    			
+    		</ul>
+    	
+    </div>
+</nav>
+
+
+
+<div id="header">
+	<div class="btn-bar"><i></i></div>
+	<h1><a href="/">carpentercloud&#39;s blog</a></h1>
+	<a class="me" href="/about/">
+        <img src="/static/images/gravatar.jpg" alt="carpenterCloud" alt="carpenterCloud">
+    </a>
+</div>
+<div id="sidebar-mask"></div>
+
+
+
+<div id="main">
+    <div class="wrap">
+        <div id="page-post">
+        	<article class="markdown">
+				<h1>
+					
+                        jq常用dom操作
+                    
+				</h1>
+				<p class="note-tags">
+					
+                        <a  href="/tags/jq" data-tag="jq">
+                            <code class="notebook">jq</code>
+                        </a>
+                    
+				</p>
+				<div class="content">
+					<p>append() - 在被选元素的结尾插入内容<br>prepend() - 在被选元素的开头插入内容<br>after() - 在被选元素之后插入内容<br>before() - 在被选元素之前插入内容</p>
+
+				</div>
+                <p> -- <acronym title="End of File">EOF</acronym> -- </p>
+                <div class="post-info">
+                    <p>本文链接：<a href="http://yoursite.com/2018/01/16/jq常用dom操作/">http://yoursite.com/2018/01/16/jq常用dom操作/</a></p>
+                    <p>发表于<i>2018-01-16 00:00:00</i>，并被添加「
+                            
+                            <a  href="/tags/jq" data-tag="jq">jq</a>
+                        」标签，最后修改于<i>2018-01-16 20:05:36</i></p>
+                </div>
+			</article>
+            
+                <div class="ds-thread" data-thread-key="2018/01/16/jq常用dom操作/"
+     data-title="jq常用dom操作" data-url="http://yoursite.com/2018/01/16/jq常用dom操作/">
+</div>
+
+            
+            <div id="SOHUCS" sid="请将此处替换为配置SourceID的语句" ></div> 
+            <script type="text/javascript"> 
+                (function(){ 
+                var appid = 'cytmEO2uE'; 
+                var conf = 'prod_286bd219be6a5f4a49feb31ad2c67b1a'; 
+                var width = window.innerWidth || document.documentElement.clientWidth; 
+                if (width < 960) { 
+                window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + 
+                appid + '&conf=' + conf + '"><\/script>'); } else { 
+                    var loadJs=function(d,a){
+                    var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;
+                    var b=document.createElement("script");b.setAttribute("type","text/javascript");
+                    b.setAttribute("charset","UTF-8");b.setAttribute("src",d);
+                    if(typeof a==="function"){
+                        if(window.attachEvent){
+                            b.onreadystatechange=function(){
+                                var e=b.readyState;
+                                if(e==="loaded"||e==="complete"){
+                                    b.onreadystatechange=null;
+                                    a()
+                                    }
+                                 }
+                            }
+                    else{b.onload=a}}c.appendChild(b)
+                    };
+                loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+                    window.changyan.api.config({appid:appid,conf:conf})}); 
+                } 
+                })(); 
+            </script>
+        </div>
+    </div>
+</div>
+
+    <!-- <script type="text/javascript">
+        var duoshuoQuery = {short_name:'carpenterCloud'};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script> -->
+    
+
+
+<script src="/static/js/meizi.js"></script>
+</body>
+</html>
