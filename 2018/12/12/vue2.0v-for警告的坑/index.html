@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="null">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="author" content="carpentercloud">
+	
+        <link rel="icon" href="/static/images/favicon.png">
+    
+    
+    
+    
+    	<meta name="description" content="在使用vue中v-for遍历时遇到了一个警告">
+    
+	<title>vue2.0 v-for 的警告 - carpentercloud&#39;s blog</title>
+	<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+
+
+<nav  id="sidebar" class=" behavior_1">
+    <div class="wrap">
+    	
+    		<div class="profile">
+    			<a href="/"><img src="/static/images/gravatar.jpg" alt="carpenterCloud"></a>
+    			<span>carpenterCloud</span>
+    		</div>
+    	
+    	
+    		<ul class="buttons">
+    			
+    				<li>
+                        <a  class="" href="/">
+                            
+                                <i class="iconfont icon-home" title="首页"></i>
+                            
+                            <span>首页</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/archive/">
+                            
+                                <i class="iconfont icon-archive" title="归档"></i>
+                            
+                            <span>归档</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/tags/">
+                            
+                                <i class="iconfont icon-tags" title="标签"></i>
+                            
+                            <span>标签</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/about/">
+                            
+                                <i class="iconfont icon-user" title="关于"></i>
+                            
+                            <span>关于</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/links/">
+                            
+                                <i class="iconfont icon-link" title="友链"></i>
+                            
+                            <span>友链</span>
+                        </a>
+                    </li>
+    			
+    		</ul>
+    	
+    		<ul class="buttons">
+    			
+    				<li>
+                        <a  target="_blank"  class="" href="https://github.com/carpentercloud">
+                            
+                                <i class="iconfont icon-github" title="GitHub"></i>
+                            
+                            <span>GitHub</span>
+                        </a>
+                    </li>
+    			
+    		</ul>
+    	
+    		<ul class="buttons">
+    			
+    				<li>
+                        <a  class="" href="/atom.xml">
+                            
+                                <i class="iconfont icon-rss" title="RSS"></i>
+                            
+                            <span>RSS</span>
+                        </a>
+                    </li>
+    			
+    		</ul>
+    	
+    </div>
+</nav>
+
+
+
+<div id="header">
+	<div class="btn-bar"><i></i></div>
+	<h1><a href="/">carpentercloud&#39;s blog</a></h1>
+	<a class="me" href="/about/">
+        <img src="/static/images/gravatar.jpg" alt="carpenterCloud" alt="carpenterCloud">
+    </a>
+</div>
+<div id="sidebar-mask"></div>
+
+
+
+<div id="main">
+    <div class="wrap">
+        <div id="page-post">
+        	<article class="markdown">
+				<h1>
+					
+                        vue2.0 v-for 的警告
+                    
+				</h1>
+				<p class="note-tags">
+					
+				</p>
+				<div class="content">
+					<p>在使用vue中<code>v-for</code>遍历时遇到了一个警告 <a id="more"></a></p>
+<blockquote>
+<p><el-checkbox v-for="item in tabSelectHead">: component lists rendered with v-for should have explicit keys. See <a href="https://vuejs.org/guide/list.html#key" target="_blank" rel="external">https://vuejs.org/guide/list.html#key</a> for more info.</el-checkbox></p>
+</blockquote>
+<p>这里翻译过来就是：组件list在使用v-for渲染是需要有一个明确的keys属性，所以我们需要给组件添加一个key属性，值是唯一的。</p>
+<p>下面是官方原文：</p>
+<blockquote>
+<p>为了给 Vue 一个提示，以便它能跟踪每个节点的身份，从而重用和重新排序现有元素，你需要为每项提供一个唯一 key 属性。理想的 key 值是每项都有的唯一 id。这个特殊的属性相当于 Vue 1.x 的 track-by ，但它的工作方式类似于一个属性，所以你需要用 v-bind 来绑定动态值 (在这里使用简写)：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">:key</span>=<span class="string">"item.id"</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- 内容 --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>建议尽可能在使用 v-for 时提供 key，除非遍历输出的 DOM 内容非常简单，或者是刻意依赖默认行为以获取性能上的提升。因为它是 Vue 识别节点的一个通用机制，key 并不与 v-for 特别关联，key 还具有其他用途，我们将在后面的指南中看到其他用途。</p>
+</blockquote>
+<hr>
+<p>仔细阅读官方文档，好处多多</p>
+
+				</div>
+                <p> -- <acronym title="End of File">EOF</acronym> -- </p>
+                <div class="post-info">
+                    <p>本文链接：<a href="http://yoursite.com/2018/12/12/vue2.0v-for警告的坑/">http://yoursite.com/2018/12/12/vue2.0v-for警告的坑/</a></p>
+                    <p>发表于<i>2018-12-12 00:00:00</i>，并被添加「」标签，最后修改于<i>2018-12-12 19:21:21</i></p>
+                </div>
+			</article>
+            
+                <div class="ds-thread" data-thread-key="2018/12/12/vue2.0v-for警告的坑/"
+     data-title="vue2.0 v-for 的警告" data-url="http://yoursite.com/2018/12/12/vue2.0v-for警告的坑/">
+</div>
+
+            
+            <div id="SOHUCS" sid="请将此处替换为配置SourceID的语句" ></div> 
+            <script type="text/javascript"> 
+                (function(){ 
+                var appid = 'cytmEO2uE'; 
+                var conf = 'prod_286bd219be6a5f4a49feb31ad2c67b1a'; 
+                var width = window.innerWidth || document.documentElement.clientWidth; 
+                if (width < 960) { 
+                window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + 
+                appid + '&conf=' + conf + '"><\/script>'); } else { 
+                    var loadJs=function(d,a){
+                    var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;
+                    var b=document.createElement("script");b.setAttribute("type","text/javascript");
+                    b.setAttribute("charset","UTF-8");b.setAttribute("src",d);
+                    if(typeof a==="function"){
+                        if(window.attachEvent){
+                            b.onreadystatechange=function(){
+                                var e=b.readyState;
+                                if(e==="loaded"||e==="complete"){
+                                    b.onreadystatechange=null;
+                                    a()
+                                    }
+                                 }
+                            }
+                    else{b.onload=a}}c.appendChild(b)
+                    };
+                loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+                    window.changyan.api.config({appid:appid,conf:conf})}); 
+                } 
+                })(); 
+            </script>
+        </div>
+    </div>
+</div>
+
+    <!-- <script type="text/javascript">
+        var duoshuoQuery = {short_name:'carpenterCloud'};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script> -->
+    
+
+
+<script src="/static/js/meizi.js"></script>
+</body>
+</html>

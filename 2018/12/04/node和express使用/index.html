@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="null">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="author" content="carpentercloud">
+	
+        <link rel="icon" href="/static/images/favicon.png">
+    
+    
+    
+    	<meta name="keyword" content="js">
+    
+    
+    	<meta name="description" content="作为新时代的前端开发者，不会用node写服务端接口，感觉有点过不去，尤其是自己想测试一些发送数据时，就要麻烦后端，而用node写接口，express是一个很不错的选择。">
+    
+	<title>node和express的使用 - carpentercloud&#39;s blog</title>
+	<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+
+
+<nav  id="sidebar" class=" behavior_1">
+    <div class="wrap">
+    	
+    		<div class="profile">
+    			<a href="/"><img src="/static/images/gravatar.jpg" alt="carpenterCloud"></a>
+    			<span>carpenterCloud</span>
+    		</div>
+    	
+    	
+    		<ul class="buttons">
+    			
+    				<li>
+                        <a  class="" href="/">
+                            
+                                <i class="iconfont icon-home" title="首页"></i>
+                            
+                            <span>首页</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/archive/">
+                            
+                                <i class="iconfont icon-archive" title="归档"></i>
+                            
+                            <span>归档</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/tags/">
+                            
+                                <i class="iconfont icon-tags" title="标签"></i>
+                            
+                            <span>标签</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/about/">
+                            
+                                <i class="iconfont icon-user" title="关于"></i>
+                            
+                            <span>关于</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/links/">
+                            
+                                <i class="iconfont icon-link" title="友链"></i>
+                            
+                            <span>友链</span>
+                        </a>
+                    </li>
+    			
+    		</ul>
+    	
+    		<ul class="buttons">
+    			
+    				<li>
+                        <a  target="_blank"  class="" href="https://github.com/carpentercloud">
+                            
+                                <i class="iconfont icon-github" title="GitHub"></i>
+                            
+                            <span>GitHub</span>
+                        </a>
+                    </li>
+    			
+    		</ul>
+    	
+    		<ul class="buttons">
+    			
+    				<li>
+                        <a  class="" href="/atom.xml">
+                            
+                                <i class="iconfont icon-rss" title="RSS"></i>
+                            
+                            <span>RSS</span>
+                        </a>
+                    </li>
+    			
+    		</ul>
+    	
+    </div>
+</nav>
+
+
+
+<div id="header">
+	<div class="btn-bar"><i></i></div>
+	<h1><a href="/">carpentercloud&#39;s blog</a></h1>
+	<a class="me" href="/about/">
+        <img src="/static/images/gravatar.jpg" alt="carpenterCloud" alt="carpenterCloud">
+    </a>
+</div>
+<div id="sidebar-mask"></div>
+
+
+
+<div id="main">
+    <div class="wrap">
+        <div id="page-post">
+        	<article class="markdown">
+				<h1>
+					
+                        node和express的使用
+                    
+				</h1>
+				<p class="note-tags">
+					
+                        <a  href="/tags/js" data-tag="js">
+                            <code class="notebook">js</code>
+                        </a>
+                    
+				</p>
+				<div class="content">
+					<p>作为新时代的前端开发者，不会用node写服务端接口，感觉有点过不去，尤其是自己想测试一些发送数据时，就要麻烦后端，而用node写接口，express是一个很不错的选择。<br><a id="more"></a></p>
+<h3 id="一、最基本的创建"><a href="#一、最基本的创建" class="headerlink" title="一、最基本的创建"></a>一、最基本的创建</h3><p>自然是先要安装express，npm install express –save<br>新建js文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">const express = require(&apos;express&apos;);</div><div class="line">const app = express();</div><div class="line">app.get(&apos;/testApi&apos;, function(req,res)&#123;</div><div class="line">    &lt;!-- 返回请求的数据 --&gt;</div><div class="line">    res.send(JSON.stringify(req.querry))</div><div class="line">&#125;)</div><div class="line">const server = app.listen(9999, function()&#123;&#125;)</div></pre></td></tr></table></figure></p>
+<h3 id="二、获取请求的数据"><a href="#二、获取请求的数据" class="headerlink" title="二、获取请求的数据"></a>二、获取请求的数据</h3><p>1.get请求，req.querry<br>2.post 请求 req.body<br>post请求，想要获取还需要依赖body-parser 这个模块<br>所以需要npm install body-parser –save<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">const bodyParser = require(&apos;body-parser&apos;);</div><div class="line">// 使用express框架获取post提交的参数需要用到bodyparser这个模块</div><div class="line">app.use(bodyParser.urlencoded(&#123; extended: false&#125;))</div></pre></td></tr></table></figure></p>
+<p>3.还有一个，req.params(这个还没尝试)</p>
+<h3 id="三、使用mysql"><a href="#三、使用mysql" class="headerlink" title="三、使用mysql"></a>三、使用mysql</h3><p>做后端接口当然少不了操作数据库，这里就来搞一下mysql好了。<br>1.首先安装mysql模块，安装命令：npm install mysql<br>2.引入mysql<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">const mysql = require(&apos;mysql)</div></pre></td></tr></table></figure></p>
+<p>3.链接数据库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">// 链接数据库配置</div><div class="line">const mysqlConfig = &#123;</div><div class="line">    host: &apos;127.0.0.1&apos;,</div><div class="line">    user: &apos;root&apos;,</div><div class="line">    password: &apos;123456&apos;,</div><div class="line">    port: &apos;3307&apos;,</div><div class="line">    database: &apos;test_dabse&apos;, </div><div class="line">&#125;;</div><div class="line">// 创建连接池</div><div class="line">const connection = mysql.createConnection(mysqlConfig);</div><div class="line">// 链接数据库</div><div class="line">connection.connect();</div><div class="line">// 操作数据库</div><div class="line">connection.query(&apos;SELECT * FROM myclass&apos;,function(err, result)&#123;</div><div class="line">    // 这里进行处理操作完数据库的逻辑</div><div class="line">&#125;)</div><div class="line">// 关闭连接池</div><div class="line">connection.end();</div></pre></td></tr></table></figure></p>
+<p>这里的3307是mysql默认的端口</p>
+
+				</div>
+                <p> -- <acronym title="End of File">EOF</acronym> -- </p>
+                <div class="post-info">
+                    <p>本文链接：<a href="http://yoursite.com/2018/12/04/node和express使用/">http://yoursite.com/2018/12/04/node和express使用/</a></p>
+                    <p>发表于<i>2018-12-04 20:30:03</i>，并被添加「
+                            
+                            <a  href="/tags/js" data-tag="js">js</a>
+                        」标签，最后修改于<i>2018-12-05 09:29:59</i></p>
+                </div>
+			</article>
+            
+                <div class="ds-thread" data-thread-key="2018/12/04/node和express使用/"
+     data-title="node和express的使用" data-url="http://yoursite.com/2018/12/04/node和express使用/">
+</div>
+
+            
+            <div id="SOHUCS" sid="请将此处替换为配置SourceID的语句" ></div> 
+            <script type="text/javascript"> 
+                (function(){ 
+                var appid = 'cytmEO2uE'; 
+                var conf = 'prod_286bd219be6a5f4a49feb31ad2c67b1a'; 
+                var width = window.innerWidth || document.documentElement.clientWidth; 
+                if (width < 960) { 
+                window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + 
+                appid + '&conf=' + conf + '"><\/script>'); } else { 
+                    var loadJs=function(d,a){
+                    var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;
+                    var b=document.createElement("script");b.setAttribute("type","text/javascript");
+                    b.setAttribute("charset","UTF-8");b.setAttribute("src",d);
+                    if(typeof a==="function"){
+                        if(window.attachEvent){
+                            b.onreadystatechange=function(){
+                                var e=b.readyState;
+                                if(e==="loaded"||e==="complete"){
+                                    b.onreadystatechange=null;
+                                    a()
+                                    }
+                                 }
+                            }
+                    else{b.onload=a}}c.appendChild(b)
+                    };
+                loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+                    window.changyan.api.config({appid:appid,conf:conf})}); 
+                } 
+                })(); 
+            </script>
+        </div>
+    </div>
+</div>
+
+    <!-- <script type="text/javascript">
+        var duoshuoQuery = {short_name:'carpenterCloud'};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script> -->
+    
+
+
+<script src="/static/js/meizi.js"></script>
+</body>
+</html>
