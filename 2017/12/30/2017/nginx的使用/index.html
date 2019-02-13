@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="null">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="author" content="carpentercloud">
+	
+        <link rel="icon" href="/static/images/favicon.png">
+    
+    
+    
+    
+    	<meta name="description" content="前国内各大门户网站已经部署了Nginx，如新浪、网易、腾讯等；国内几个重要的视频分享网站也部署了Nginx，如六房间、酷6等。">
+    
+	<title>nginx的使用 - carpentercloud&#39;s blog</title>
+	<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+
+
+<nav  id="sidebar" class=" behavior_1">
+    <div class="wrap">
+    	
+    		<div class="profile">
+    			<a href="/"><img src="/static/images/gravatar.jpg" alt="carpenterCloud"></a>
+    			<span>carpenterCloud</span>
+    		</div>
+    	
+    	
+    		<ul class="buttons">
+    			
+    				<li>
+                        <a  class="" href="/">
+                            
+                                <i class="iconfont icon-home" title="首页"></i>
+                            
+                            <span>首页</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/archive/">
+                            
+                                <i class="iconfont icon-archive" title="归档"></i>
+                            
+                            <span>归档</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/tags/">
+                            
+                                <i class="iconfont icon-tags" title="标签"></i>
+                            
+                            <span>标签</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/about/">
+                            
+                                <i class="iconfont icon-user" title="关于"></i>
+                            
+                            <span>关于</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/links/">
+                            
+                                <i class="iconfont icon-link" title="友链"></i>
+                            
+                            <span>友链</span>
+                        </a>
+                    </li>
+    			
+    		</ul>
+    	
+    		<ul class="buttons">
+    			
+    				<li>
+                        <a  target="_blank"  class="" href="https://github.com/carpentercloud">
+                            
+                                <i class="iconfont icon-github" title="GitHub"></i>
+                            
+                            <span>GitHub</span>
+                        </a>
+                    </li>
+    			
+    		</ul>
+    	
+    		<ul class="buttons">
+    			
+    				<li>
+                        <a  class="" href="/atom.xml">
+                            
+                                <i class="iconfont icon-rss" title="RSS"></i>
+                            
+                            <span>RSS</span>
+                        </a>
+                    </li>
+    			
+    		</ul>
+    	
+    </div>
+</nav>
+
+
+
+<div id="header">
+	<div class="btn-bar"><i></i></div>
+	<h1><a href="/">carpentercloud&#39;s blog</a></h1>
+	<a class="me" href="/about/">
+        <img src="/static/images/gravatar.jpg" alt="carpenterCloud" alt="carpenterCloud">
+    </a>
+</div>
+<div id="sidebar-mask"></div>
+
+
+
+<div id="main">
+    <div class="wrap">
+        <div id="page-post">
+        	<article class="markdown">
+				<h1>
+					
+                        nginx的使用
+                    
+				</h1>
+				<p class="note-tags">
+					
+				</p>
+				<div class="content">
+					<p>前国内各大门户网站已经部署了Nginx，如新浪、网易、腾讯等；国内几个重要的视频分享网站也部署了Nginx，如六房间、酷6等。<a id="more"></a>新近发现Nginx 技术在国内日趋火热，越来越多的网站开始部署Nginx。相比apeach、iis，nginx以轻量级、高性能、稳定、配置简单、资源占用少等优势广受欢迎。</p>
+<hr>
+<p>然而这些并用不到，作为前端，用的最多的也就是在本地跑起项目，做一些映射、代理服务。<br>以前在mac上都是命令行搞定，而如今却转为windows用户，还是不得不来习惯性window下的命令的。</p>
+<h2 id="一、-首先安装，自然是去官网下载"><a href="#一、-首先安装，自然是去官网下载" class="headerlink" title="一、 首先安装，自然是去官网下载"></a>一、 首先安装，自然是去官网下载</h2><p>地址：<a href="http://nginx.org" target="_blank" rel="external">http://nginx.org</a></p>
+<h2 id="二、使用"><a href="#二、使用" class="headerlink" title="二、使用"></a>二、使用</h2><p>关于使用还是比较推荐敲命令的方式来搞了，毕竟装逼一下也是好的，更主要是觉得每次去双击exe，很傻逼，好像也有弊端，比如 <code>这样会导致修改配置后重启、停止nginx无效，需要手动关闭任务管理器内的所有nginx进程</code>.<br>首先还是要先进入到安装nginx的目录，</p>
+<blockquote>
+<p>cd nginx 目录</p>
+</blockquote>
+<p>然后<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">start nginx  //启动nginx</div><div class="line">nginx -s reload // 修改配置后重新加载生效</div><div class="line">nginx -s reopen // 重新打开日志文件</div><div class="line">nginx -t -c /path/to/nginx.conf  //测试nginx配置文件是否正确</div><div class="line"></div><div class="line">nginx -s stop // 快速停止nginx</div><div class="line">nginx -s quit // 完整有序的停止nginx</div></pre></td></tr></table></figure></p>
+<p><code>备注：</code>本来我是习惯用git工具的，所以在git的敲这些命令无效，转为cmd自带的命令行工具。<br>git里敲的是linux命令。</p>
+<h2 id="三、配置"><a href="#三、配置" class="headerlink" title="三、配置"></a>三、配置</h2><p>像我这种喜欢先使用，而后才会进一步去想如果配置的，不知是否本末倒置了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"> http &#123;</div><div class="line">     gzip  on;</div><div class="line">    #静态文件</div><div class="line">    server &#123;</div><div class="line">        listen       80;</div><div class="line">        server_name  static.cnblog.com;</div><div class="line">        location / &#123;</div><div class="line">            root   G:/source/static_cnblog_com;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    #html文件</div><div class="line">    server &#123;</div><div class="line">        listen       80;</div><div class="line">        server_name  127.0.0.1 localhost;</div><div class="line">        location / &#123;</div><div class="line">            root   G:/source/html/mobile/dist;</div><div class="line">            index  index.html index.htm;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+				</div>
+                <p> -- <acronym title="End of File">EOF</acronym> -- </p>
+                <div class="post-info">
+                    <p>本文链接：<a href="http://yoursite.com/2017/12/30/2017/nginx的使用/">http://yoursite.com/2017/12/30/2017/nginx的使用/</a></p>
+                    <p>发表于<i>2017-12-30 00:00:00</i>，并被添加「」标签，最后修改于<i>2019-02-12 20:37:43</i></p>
+                </div>
+			</article>
+            
+                <div class="ds-thread" data-thread-key="2017/12/30/2017/nginx的使用/"
+     data-title="nginx的使用" data-url="http://yoursite.com/2017/12/30/2017/nginx的使用/">
+</div>
+
+            
+            <div id="SOHUCS" sid="请将此处替换为配置SourceID的语句" ></div> 
+            <script type="text/javascript"> 
+                (function(){ 
+                var appid = 'cytmEO2uE'; 
+                var conf = 'prod_286bd219be6a5f4a49feb31ad2c67b1a'; 
+                var width = window.innerWidth || document.documentElement.clientWidth; 
+                if (width < 960) { 
+                window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + 
+                appid + '&conf=' + conf + '"><\/script>'); } else { 
+                    var loadJs=function(d,a){
+                    var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;
+                    var b=document.createElement("script");b.setAttribute("type","text/javascript");
+                    b.setAttribute("charset","UTF-8");b.setAttribute("src",d);
+                    if(typeof a==="function"){
+                        if(window.attachEvent){
+                            b.onreadystatechange=function(){
+                                var e=b.readyState;
+                                if(e==="loaded"||e==="complete"){
+                                    b.onreadystatechange=null;
+                                    a()
+                                    }
+                                 }
+                            }
+                    else{b.onload=a}}c.appendChild(b)
+                    };
+                loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+                    window.changyan.api.config({appid:appid,conf:conf})}); 
+                } 
+                })(); 
+            </script>
+        </div>
+    </div>
+</div>
+
+    <!-- <script type="text/javascript">
+        var duoshuoQuery = {short_name:'carpenterCloud'};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script> -->
+    
+
+
+<script src="/static/js/meizi.js"></script>
+</body>
+</html>

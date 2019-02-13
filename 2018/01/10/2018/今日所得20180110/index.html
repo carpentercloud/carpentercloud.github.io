@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="null">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="author" content="carpentercloud">
+	
+        <link rel="icon" href="/static/images/favicon.png">
+    
+    
+    
+    	<meta name="keyword" content="js,算法">
+    
+    
+    	<meta name="description" content="记录下今天所得。首先把地址贴出来。">
+    
+	<title>排序算法、fiddler、数组操作 - carpentercloud&#39;s blog</title>
+	<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+
+
+<nav  id="sidebar" class=" behavior_1">
+    <div class="wrap">
+    	
+    		<div class="profile">
+    			<a href="/"><img src="/static/images/gravatar.jpg" alt="carpenterCloud"></a>
+    			<span>carpenterCloud</span>
+    		</div>
+    	
+    	
+    		<ul class="buttons">
+    			
+    				<li>
+                        <a  class="" href="/">
+                            
+                                <i class="iconfont icon-home" title="首页"></i>
+                            
+                            <span>首页</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/archive/">
+                            
+                                <i class="iconfont icon-archive" title="归档"></i>
+                            
+                            <span>归档</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/tags/">
+                            
+                                <i class="iconfont icon-tags" title="标签"></i>
+                            
+                            <span>标签</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/about/">
+                            
+                                <i class="iconfont icon-user" title="关于"></i>
+                            
+                            <span>关于</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/links/">
+                            
+                                <i class="iconfont icon-link" title="友链"></i>
+                            
+                            <span>友链</span>
+                        </a>
+                    </li>
+    			
+    		</ul>
+    	
+    		<ul class="buttons">
+    			
+    				<li>
+                        <a  target="_blank"  class="" href="https://github.com/carpentercloud">
+                            
+                                <i class="iconfont icon-github" title="GitHub"></i>
+                            
+                            <span>GitHub</span>
+                        </a>
+                    </li>
+    			
+    		</ul>
+    	
+    		<ul class="buttons">
+    			
+    				<li>
+                        <a  class="" href="/atom.xml">
+                            
+                                <i class="iconfont icon-rss" title="RSS"></i>
+                            
+                            <span>RSS</span>
+                        </a>
+                    </li>
+    			
+    		</ul>
+    	
+    </div>
+</nav>
+
+
+
+<div id="header">
+	<div class="btn-bar"><i></i></div>
+	<h1><a href="/">carpentercloud&#39;s blog</a></h1>
+	<a class="me" href="/about/">
+        <img src="/static/images/gravatar.jpg" alt="carpenterCloud" alt="carpenterCloud">
+    </a>
+</div>
+<div id="sidebar-mask"></div>
+
+
+
+<div id="main">
+    <div class="wrap">
+        <div id="page-post">
+        	<article class="markdown">
+				<h1>
+					
+                        排序算法、fiddler、数组操作
+                    
+				</h1>
+				<p class="note-tags">
+					
+                        <a  href="/tags/js" data-tag="js">
+                            <code class="notebook">js</code>
+                        </a>
+                    
+                        <a  href="/tags/算法" data-tag="算法">
+                            <code class="notebook">算法</code>
+                        </a>
+                    
+				</p>
+				<div class="content">
+					<p>记录下今天所得。首先把地址贴出来。<br><a id="more"></a></p>
+<hr>
+<h3 id="1-排序算法"><a href="#1-排序算法" class="headerlink" title="1.排序算法"></a>1.排序算法</h3><p>今天要去修改一个轮播图配置的功能，需求是能够输入编号，按编号排序。以往这种大多数都是交给后端去排序，无奈实在不想劳烦后台了，那我就来排下，经过观察，数据结构是这样的。</p>
+<blockquote>
+<p>[<br>  {<br>    “gid”: “1482968431”,<br>    “num”: “1”,<br>    “link”: “”,<br>    “670x280”: “<a href="https://www.shandw.com/h5/h5gameimg/SSZJTHXG11.jpg" target="_blank" rel="external">https://www.shandw.com/h5/h5gameimg/SSZJTHXG11.jpg</a>“,<br>    “300x300”: “undefined”<br>  },<br>  {<br>    “gid”: “”,<br>    “num”: “3”,<br>    “link”: “www.baidu.com”,<br>    “670x280”: “<a href="https://open.shandw.com/uploads/1b44413761fd3e662b09bee055e604f3.png" target="_blank" rel="external">https://open.shandw.com/uploads/1b44413761fd3e662b09bee055e604f3.png</a>“,<br>    “300x300”: “<a href="https://open.shandw.com/uploads/b3d33ec31ac1b3bb77729e48ea0d378e.png" target="_blank" rel="external">https://open.shandw.com/uploads/b3d33ec31ac1b3bb77729e48ea0d378e.png</a>“<br>  },<br>  {<br>    “gid”: “2022353101”,<br>    “num”: “2”,<br>    “link”: “”,<br>    “670x280”: “<a href="https://open.shandw.com/uploads/828611ea222ca3a252e7e2b305ca0230.png" target="_blank" rel="external">https://open.shandw.com/uploads/828611ea222ca3a252e7e2b305ca0230.png</a>“,<br>    “300x300”: “<a href="https://open.shandw.com/uploads/e34c74ee3d9a0b4ad47795a69635f188.png" target="_blank" rel="external">https://open.shandw.com/uploads/e34c74ee3d9a0b4ad47795a69635f188.png</a>“<br>  }<br>]</p>
+</blockquote>
+<p>好在大学时学的冒泡排序还记得，但是并不是十分自信，毕竟这是我第一次在工作中用到算法，也百度翻了下资料，<br>经过测试写出以下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">for(var i=0; i&lt;submitData.length-1; i++)&#123;</div><div class="line">    for(var j=0;j&lt;submitData.length-1-i; j++)&#123;</div><div class="line">        if(submitData[j].num &gt;submitData[j+1].num)&#123;</div><div class="line">            var a = submitData[j];</div><div class="line">            submitData[j] = submitData[j+1];</div><div class="line">            submitData[j+1] = a;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当然这只是最简单的一种排序算法，还有其他更好的办法，参考地址如下<a href="https://www.cnblogs.com/eniac12/p/5329396.html" target="_blank" rel="external">常用排序算法总结</a></p>
+<h3 id="2-fiddler"><a href="#2-fiddler" class="headerlink" title="2.fiddler"></a>2.fiddler</h3><p>这里也没有深入去研读，插个眼，<a href="https://www.jianshu.com/p/99b6b4cd273c" target="_blank" rel="external">Fiddler教程</a></p>
+<h3 id="3-数组的操作"><a href="#3-数组的操作" class="headerlink" title="3.数组的操作"></a>3.数组的操作</h3><blockquote>
+<p>   var arr = [];<br>   arr.push(item1, item2) //在数组的结尾添加新的元素<br>   arr.unshift(item1) //在数组的开始加入新元素，<br>   arr.splice(insertPos, 0, item); // 将一个或多个元素插入到指定位置的前面</p>
+</blockquote>
+
+				</div>
+                <p> -- <acronym title="End of File">EOF</acronym> -- </p>
+                <div class="post-info">
+                    <p>本文链接：<a href="http://yoursite.com/2018/01/10/2018/今日所得20180110/">http://yoursite.com/2018/01/10/2018/今日所得20180110/</a></p>
+                    <p>发表于<i>2018-01-10 00:00:00</i>，并被添加「
+                            
+                            <a  href="/tags/js" data-tag="js">js</a>
+                        
+                            ，
+                            <a  href="/tags/算法" data-tag="算法">算法</a>
+                        」标签，最后修改于<i>2019-02-12 20:40:52</i></p>
+                </div>
+			</article>
+            
+                <div class="ds-thread" data-thread-key="2018/01/10/2018/今日所得20180110/"
+     data-title="排序算法、fiddler、数组操作" data-url="http://yoursite.com/2018/01/10/2018/今日所得20180110/">
+</div>
+
+            
+            <div id="SOHUCS" sid="请将此处替换为配置SourceID的语句" ></div> 
+            <script type="text/javascript"> 
+                (function(){ 
+                var appid = 'cytmEO2uE'; 
+                var conf = 'prod_286bd219be6a5f4a49feb31ad2c67b1a'; 
+                var width = window.innerWidth || document.documentElement.clientWidth; 
+                if (width < 960) { 
+                window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + 
+                appid + '&conf=' + conf + '"><\/script>'); } else { 
+                    var loadJs=function(d,a){
+                    var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;
+                    var b=document.createElement("script");b.setAttribute("type","text/javascript");
+                    b.setAttribute("charset","UTF-8");b.setAttribute("src",d);
+                    if(typeof a==="function"){
+                        if(window.attachEvent){
+                            b.onreadystatechange=function(){
+                                var e=b.readyState;
+                                if(e==="loaded"||e==="complete"){
+                                    b.onreadystatechange=null;
+                                    a()
+                                    }
+                                 }
+                            }
+                    else{b.onload=a}}c.appendChild(b)
+                    };
+                loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+                    window.changyan.api.config({appid:appid,conf:conf})}); 
+                } 
+                })(); 
+            </script>
+        </div>
+    </div>
+</div>
+
+    <!-- <script type="text/javascript">
+        var duoshuoQuery = {short_name:'carpenterCloud'};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script> -->
+    
+
+
+<script src="/static/js/meizi.js"></script>
+</body>
+</html>

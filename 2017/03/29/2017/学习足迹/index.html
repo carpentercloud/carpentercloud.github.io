@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="null">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="author" content="carpentercloud">
+	
+        <link rel="icon" href="/static/images/favicon.png">
+    
+    
+    
+    	<meta name="keyword" content="杂记">
+    
+    
+    	<meta name="description" content="趁着清晨思路清晰来一发，这篇文章主要记录自己在闲暇时学习及在工作时遇到问题，查找资料遇见的好的一些资料、博客、文章等。">
+    
+	<title>学习足迹 - carpentercloud&#39;s blog</title>
+	<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+
+
+<nav  id="sidebar" class=" behavior_1">
+    <div class="wrap">
+    	
+    		<div class="profile">
+    			<a href="/"><img src="/static/images/gravatar.jpg" alt="carpenterCloud"></a>
+    			<span>carpenterCloud</span>
+    		</div>
+    	
+    	
+    		<ul class="buttons">
+    			
+    				<li>
+                        <a  class="" href="/">
+                            
+                                <i class="iconfont icon-home" title="首页"></i>
+                            
+                            <span>首页</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/archive/">
+                            
+                                <i class="iconfont icon-archive" title="归档"></i>
+                            
+                            <span>归档</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/tags/">
+                            
+                                <i class="iconfont icon-tags" title="标签"></i>
+                            
+                            <span>标签</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/about/">
+                            
+                                <i class="iconfont icon-user" title="关于"></i>
+                            
+                            <span>关于</span>
+                        </a>
+                    </li>
+    			
+    				<li>
+                        <a  class="" href="/links/">
+                            
+                                <i class="iconfont icon-link" title="友链"></i>
+                            
+                            <span>友链</span>
+                        </a>
+                    </li>
+    			
+    		</ul>
+    	
+    		<ul class="buttons">
+    			
+    				<li>
+                        <a  target="_blank"  class="" href="https://github.com/carpentercloud">
+                            
+                                <i class="iconfont icon-github" title="GitHub"></i>
+                            
+                            <span>GitHub</span>
+                        </a>
+                    </li>
+    			
+    		</ul>
+    	
+    		<ul class="buttons">
+    			
+    				<li>
+                        <a  class="" href="/atom.xml">
+                            
+                                <i class="iconfont icon-rss" title="RSS"></i>
+                            
+                            <span>RSS</span>
+                        </a>
+                    </li>
+    			
+    		</ul>
+    	
+    </div>
+</nav>
+
+
+
+<div id="header">
+	<div class="btn-bar"><i></i></div>
+	<h1><a href="/">carpentercloud&#39;s blog</a></h1>
+	<a class="me" href="/about/">
+        <img src="/static/images/gravatar.jpg" alt="carpenterCloud" alt="carpenterCloud">
+    </a>
+</div>
+<div id="sidebar-mask"></div>
+
+
+
+<div id="main">
+    <div class="wrap">
+        <div id="page-post">
+        	<article class="markdown">
+				<h1>
+					
+                        学习足迹
+                    
+				</h1>
+				<p class="note-tags">
+					
+                        <a  href="/tags/杂记" data-tag="杂记">
+                            <code class="notebook">杂记</code>
+                        </a>
+                    
+				</p>
+				<div class="content">
+					<p>趁着清晨思路清晰来一发，这篇文章主要记录自己在闲暇时学习及在工作时遇到问题，查找资料遇见的好的一些资料、博客、文章等。<br><a id="more"></a></p>
+<hr>
+<h3 id="报错处理"><a href="#报错处理" class="headerlink" title="报错处理"></a>报错处理</h3><blockquote>
+<p>$(document).on ‘click’, ‘.click-class’, @clickEvent #委托事件</p>
+</blockquote>
+<p>Uncaught TypeError: ((jQuery.event.special[handleObj.origType] || (intermediate value)).handle || handleObj.handler).apply is not a function<br>我的理解：未找到要委托的函数</p>
+<hr>
+<h3 id="JavaScript-开发者经常忽略或误用的七个基础知识点"><a href="#JavaScript-开发者经常忽略或误用的七个基础知识点" class="headerlink" title="JavaScript 开发者经常忽略或误用的七个基础知识点"></a><a href="http://blog.csdn.net/qq_37810594/article/details/61193631" target="_blank" rel="external">JavaScript 开发者经常忽略或误用的七个基础知识点</a></h3><pre><code>1. 在 String.prototype.replace 方法中使用 /g 和 /i 标志位
+</code></pre><blockquote>
+<p> var str = “David is an Arsenal fan, which means David is great”;<br>    str.replace(“David”, “Darren”); // “Darren is an Arsenal fan, which means David is great”<br>    str.replace(/David/g, “Darren”); // “Darren is an Arsenal fan, which means Darren is great”</p>
+</blockquote>
+<pre><code>2. 类数组对象和 Array.prototype.slice 方法
+</code></pre><blockquote>
+<p>var nodesArr = Array.prototype.slice.call(document.querySelectorAll(“div”));<br>    // “true” array of DIVs<br>    // 得到一个由 div 元素组成的“真正的”数组<br>    var argsArr = Array.prototype.slice.call(arguments);<br>    // changes arguments to “true” array<br>    // 把 arguments 转换成一个“真正的”数组<br>    你还可以使用一次简单的 slice 调用来克隆一个数组：<br>    var clone = myArray.slice(0); // naive clone </p>
+</blockquote>
+<pre><code>3.Array.prototype.sort 方法
+</code></pre><blockquote>
+<p>[1, 3, 9, 2].sort();// 返回 [1, 2, 3, 9]<br>    [<br>        { name: “Robin Van PurseStrings”, age: 30 },<br>        { name: “Theo Walcott”, age: 24 },<br>        { name: “Bacary Sagna”, age: 28  }<br>    ].sort(function(obj1, obj2) {<br>        // Ascending: first age less than the previous<br>        // 实现增序排列：前者的 age 小于后者<br>        return obj1.age - obj2.age;<br>    });<br>        // Returns:<br>        // [<br>        //    { name: “Theo Walcott”, age: 24 },<br>        //    { name: “Bacary Sagna”, age: 28  },<br>        //    { name: “Robin Van PurseStrings”, age: 30 }<br>    // ]  </p>
+</blockquote>
+<pre><code>4.用 length 属性来截断数组
+</code></pre><blockquote>
+<p>var myArray = yourArray = [1, 2, 3];<br>    myArray = []; // <code>yourArray</code> is still [1, 2, 3]<br>    myArray.length = 0; // <code>yourArray</code> and <code>myArray</code> both [ ] </p>
+</blockquote>
+<pre><code>5.使用 push 来合并数组
+</code></pre><blockquote>
+<p>var mergeTo = [4,5,6];<br>    var mergeFrom = [7,8,9];<br>    Array.prototype.push.apply(mergeTo, mergeFrom);<br>    mergeTo; // is: [4, 5, 6, 7, 8, 9] </p>
+</blockquote>
+<pre><code>6.高效探测功能特性和对象属性
+</code></pre><blockquote>
+<p>if(navigator.geolocation) {<br>        // Do some stuff<br>        // 在这里干点事情<br>    }</p>
+</blockquote>
+<p>  当然这可以正常工作，但它并不一定有很好的效率。因为这个对象探测方法会在浏览器中初始化资源。在过去，上面的代码片断可能会在某些浏览器下导致内存泄露。更好、更快的方法是检查对象是否包含某个键名：</p>
+<blockquote>
+<p>if(“geolocation” in navigator) {<br>        // Do some stuff<br>        // 在这里干点事情<br>    }</p>
+</blockquote>
+<p>  键名检查十分简单，而且可以避免内存泄露。另外请注意，如果这个属性的值是假值，那么前一种探测方式将会得到“否”的结果，并不能真正探测出这个键名是否存在。</p>
+<pre><code>7.事件对象的 preventDefault 和 stopPropagation 方法
+</code></pre><hr>
+<h3 id="json-在线解析工具"><a href="#json-在线解析工具" class="headerlink" title="json 在线解析工具"></a>json 在线解析工具</h3><p><a href="http://jsoneditoronline.org/" target="_blank" rel="external">jsoneditoronline/</a></p>
+<h3 id="React篇"><a href="#React篇" class="headerlink" title="React篇"></a>React篇</h3><hr>
+<h3 id="Redux"><a href="#Redux" class="headerlink" title="Redux"></a>Redux</h3><p><a href="http://cn.redux.js.org/docs/introduction/index.html" target="_blank" rel="external">Redux中文文档</a></p>
+<hr>
+<h3 id="vue篇"><a href="#vue篇" class="headerlink" title="vue篇"></a>vue篇</h3><p><a href="http://cn.vuejs.org/v2/guide/" target="_blank" rel="external">vue文档</a></p>
+<hr>
+<h3 id="前端资源教程-没事就去瞅两眼"><a href="#前端资源教程-没事就去瞅两眼" class="headerlink" title="前端资源教程(没事就去瞅两眼)"></a>前端资源教程(没事就去瞅两眼)</h3><p><a href="https://cnodejs.org/topic/56ef3edd532839c33a99d00e" target="_blank" rel="external">前端资源教程</a></p>
+<h3 id="一些前端面试题的整理"><a href="#一些前端面试题的整理" class="headerlink" title="一些前端面试题的整理"></a><a href="http://gcdn.gcpowertools.com.cn/showtopic-36821-1-3.html?utm_source=segmentfault&amp;utm_medium=referral&amp;utm_campaign=20170411" target="_blank" rel="external">一些前端面试题的整理</a></h3><h3 id="html之表格边框"><a href="#html之表格边框" class="headerlink" title="html之表格边框"></a>html之表格边框</h3><p><a href="https://www.cnblogs.com/leona-d/p/6125896.html" target="_blank" rel="external">html-浅谈如何正确给table加边框</a></p>
+
+				</div>
+                <p> -- <acronym title="End of File">EOF</acronym> -- </p>
+                <div class="post-info">
+                    <p>本文链接：<a href="http://yoursite.com/2017/03/29/2017/学习足迹/">http://yoursite.com/2017/03/29/2017/学习足迹/</a></p>
+                    <p>发表于<i>2017-03-29 08:28:30</i>，并被添加「
+                            
+                            <a  href="/tags/杂记" data-tag="杂记">杂记</a>
+                        」标签，最后修改于<i>2019-02-12 20:44:07</i></p>
+                </div>
+			</article>
+            
+                <div class="ds-thread" data-thread-key="2017/03/29/2017/学习足迹/"
+     data-title="学习足迹" data-url="http://yoursite.com/2017/03/29/2017/学习足迹/">
+</div>
+
+            
+            <div id="SOHUCS" sid="请将此处替换为配置SourceID的语句" ></div> 
+            <script type="text/javascript"> 
+                (function(){ 
+                var appid = 'cytmEO2uE'; 
+                var conf = 'prod_286bd219be6a5f4a49feb31ad2c67b1a'; 
+                var width = window.innerWidth || document.documentElement.clientWidth; 
+                if (width < 960) { 
+                window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + 
+                appid + '&conf=' + conf + '"><\/script>'); } else { 
+                    var loadJs=function(d,a){
+                    var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;
+                    var b=document.createElement("script");b.setAttribute("type","text/javascript");
+                    b.setAttribute("charset","UTF-8");b.setAttribute("src",d);
+                    if(typeof a==="function"){
+                        if(window.attachEvent){
+                            b.onreadystatechange=function(){
+                                var e=b.readyState;
+                                if(e==="loaded"||e==="complete"){
+                                    b.onreadystatechange=null;
+                                    a()
+                                    }
+                                 }
+                            }
+                    else{b.onload=a}}c.appendChild(b)
+                    };
+                loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+                    window.changyan.api.config({appid:appid,conf:conf})}); 
+                } 
+                })(); 
+            </script>
+        </div>
+    </div>
+</div>
+
+    <!-- <script type="text/javascript">
+        var duoshuoQuery = {short_name:'carpenterCloud'};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script> -->
+    
+
+
+<script src="/static/js/meizi.js"></script>
+</body>
+</html>
