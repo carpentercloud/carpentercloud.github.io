@@ -152,6 +152,11 @@
 <h2 id="9-将表中数据清空"><a href="#9-将表中数据清空" class="headerlink" title="9.将表中数据清空"></a>9.将表中数据清空</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">delete from tableName</div></pre></td></tr></table></figure>
 <h2 id="10-显示表中的记录"><a href="#10-显示表中的记录" class="headerlink" title="10.显示表中的记录"></a>10.显示表中的记录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from tableName</div></pre></td></tr></table></figure>
 <h2 id="11-关闭Mysqlserver服务"><a href="#11-关闭Mysqlserver服务" class="headerlink" title="11.关闭Mysqlserver服务"></a>11.关闭Mysqlserver服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">net stop mysql</div></pre></td></tr></table></figure>
+<hr>
+<p>在使用mysql之后，避免不了使用可视化工具，我这里使用了mysqlfront，版本6.1，但是版本打开不支持最新加密。<br>报错如下：<code>MySQL-Front does not support passwords with Mysql8 and higher</code><br>不知道为什么，想要使用个新的东西总是困难重重，坑那么多，慢慢填。<br><code>The caching_sha2_password and sha256_password authentication plugins provide more secure password encryption than the mysql_native_password plugin, and caching_sha2_password provides better performance than sha256_password. Due to these superior security and performance characteristics of caching_sha2_password, it is as of MySQL 8.0 the preferred authentication plugin, and is also the default authentication plugin rather than mysql_native_password.</code><br>翻译过来就是：caching_sha2_password 和sha256_password认证插件比mysql_native_password插件提供的密码加密更加安全，并且caching_sha2_password加密比sha256_password的加密性能更好。由于caching_sha2_password这样优秀的安全和性能特性，让他作为MySQL8.0的首选认证插件，这也是默认的认证插件插件而不是mysql_native_password</p>
+<p>经过查阅资料，原来mysql8.0默认使用了新的加密方式，大多数第三方工具都还不支持。所以，在本地开发中，可以通过mysql的配置文件，修改为老的加密方式：<br>如果有配置文件my.ini 就直接配置，没有在根目录直接创建。修改如下，这里我把默认端口3306 改成了3307<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[client]</div><div class="line">port=3307</div><div class="line">[mysqld]</div><div class="line"># The TCP/IP Port the MySQL Server will listen on</div><div class="line">port=3307</div><div class="line">default_authentication_plugin=mysql_native_password</div></pre></td></tr></table></figure></p>
+<p>然后重启mysql，再次使用mysql front链接，ok！</p>
+
 				</div>
                 <p> -- <acronym title="End of File">EOF</acronym> -- </p>
                 <div class="post-info">
@@ -159,7 +164,7 @@
                     <p>发表于<i>2018-10-12 18:10:03</i>，并被添加「
                             
                             <a  href="/tags/mysql" data-tag="mysql">mysql</a>
-                        」标签，最后修改于<i>2019-02-12 20:45:11</i></p>
+                        」标签，最后修改于<i>2019-02-22 11:03:06</i></p>
                 </div>
 			</article>
             
